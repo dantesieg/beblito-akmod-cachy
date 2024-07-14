@@ -55,7 +55,9 @@ RUN curl -Lo /etc/yum.repos.d/bieszczaders-kernel-cachyos-fedora-40.repo https:/
 
 RUN rpm-ostree cliwrap install-to-root /
 
-RUN rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos kernel-cachyos-core kernel-cachyos-modules && ostree container commit
+RUN rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos \
+    rpm-ostree install kernel-cachyos-core kernel-cachyos-modules && \
+    ostree container commit
 # RUN rpm-ostree install fontconfig-font-replacements fontconfig-enhanced-defaults distrobox && ostree container commit
 
 COPY *.sh /tmp/
