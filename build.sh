@@ -20,7 +20,11 @@ KERNEL="$(rpm -q kernel-cachyos --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')"
 
 #### Example for enabling a System Unit File
 
-rpm-ostree install akmods mock
+    rpm-ostree install dnf5 binutils
+
+    dnf5 update -y
+
+    rpm-ostree install akmods mock
 
     curl -L https://negativo17.org/repos/fedora-nvidia.repo -o /etc/yum.repos.d/fedora-nvidia.repo
 
