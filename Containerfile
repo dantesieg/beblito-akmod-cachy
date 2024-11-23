@@ -49,8 +49,8 @@ FROM quay.io/fedora-ostree-desktops/kinoite:41 AS builder
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-RUN curl -Lo /etc/yum.repos.d/bieszczaders-kernel-cachyos-fedora-41.repo https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-41/bieszczaders-kernel-cachyos-fedora-40.repo && \
-    curl -Lo /etc/yum.repos.d/bieszczaders-kernel-cachyos-addons-fedora-41.repo https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-41/bieszczaders-kernel-cachyos-addons-fedora-41.repo && \
+RUN curl -Lo /etc/yum.repos.d/bieszczaders-kernel-cachyos-fedora-40.repo https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-40/bieszczaders-kernel-cachyos-fedora-40.repo && \
+    curl -Lo /etc/yum.repos.d/bieszczaders-kernel-cachyos-addons-fedora-40.repo https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-40/bieszczaders-kernel-cachyos-addons-fedora-40.repo && \
     ostree container commit
 
 RUN rpm-ostree cliwrap install-to-root /
